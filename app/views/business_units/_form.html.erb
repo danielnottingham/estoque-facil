@@ -1,0 +1,32 @@
+<%= form_with(model: @business_unit) do |f| %>
+
+  <% if @business_unit.errors.any? %>
+    <div class="alert alert-danger">
+      <% @business_unit.errors.each do |error| %>
+        <p><%= error.full_message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

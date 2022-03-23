@@ -1,0 +1,22 @@
+<h1>index</h1>
+<%= notice %>
+
+<% @business_units.each do |business_unit| %>
+  <p>
+    Nome da unidade:
+    <%= business_unit.name %>
+  </p>
+  <p>
+    <%= business_unit.phone %>
+  </p>
+  <p>
+    <%= business_unit.email %>
+  </p>
+  <p>
+    <%= business_unit.address %>
+  </p>
+  <%= link_to 'Delete', "/business_units/#{business_unit.id}", method: :delete, data: { confirm: "Confirma?" } %>
+<% end %>
+
+<br>
+<%= link_to 'New Business Unit', new_business_unit_path %>
